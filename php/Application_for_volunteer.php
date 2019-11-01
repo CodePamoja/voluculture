@@ -20,12 +20,15 @@ if(isset($user_email) && isset($project_id)){
     );
 
     if(!$proj_application){
-        echo"Error in project Application";
+        echo"<div class='error_box'>
+        
+        <h4>There was an error with you application login and try Again </h4>
+        </div>";
     }else{
         
-        echo"<div>
-                <h4>Application Successful</h4>
-                <button>Check on other projects</button>
+        echo"<div class='succes_box'>
+                <div><h4>Application Successful</h4></div>
+                <div><button id='ret_btn'><a href='#'>Check on other projects</a></button></div>
                 </div>";
         $subject ="VOLUCULTURE REGISTRATION";
         $body = "<div style='text-align:center'><h3> Hi <b class='color:blue'>$user_data->username</b> you have succesfully for $proj_data->project_name through voluculture.Accepted applicants will be contacted.</h3>";
@@ -39,7 +42,22 @@ if(isset($user_email) && isset($project_id)){
 
 }elseif(!isset($user_email)){
 
-echo"Login or register to apply for a volunteering project";
+echo"<div>
+<!-- SignIn starts -->
+<div class='signin'>
+
+<form action='' method='POST'>
+<div><input type='text' id='username_from_app' name='username_from _app' placeholder='Username'></div>
+<div><input type='password' id='password_from_app' name='username_from _app'></div>
+<div><button type='submit'></button></div>
+</div>
+
+</form>
+
+<!-- SignIn ends-->
+
+";
+
 
 }elseif(!isset($project_id)){
 
