@@ -22,6 +22,8 @@ $app->Apply($_GET['project_id'],$_SESSION['email']);
     $evt->confirmEvents($_GET['project_id'],$_SESSION['email']);
     
 
+}else{
+    echo"No Event or Application";
 }
 
 
