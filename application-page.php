@@ -23,7 +23,7 @@ $app->Apply($_GET['project_id'],$_SESSION['email']);
     
 
 }else{
-    echo"No Event or Application";
+    echo"<div><h4>There is no Event or Project</h4></div>";
 }
 
 
